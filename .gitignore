@@ -1,0 +1,30 @@
+# Raw data - exclude from git
+data/raw/
+data/processed/
+
+# Checkpoints and logs
+checkpoints/
+logs/
+evaluation_results/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db

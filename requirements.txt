@@ -1,0 +1,30 @@
+# =============================================================================
+# VQA Project Dependencies
+# Visual Question Answering System - Advanced CNN Course
+# =============================================================================
+
+# Core Deep Learning Framework
+torch>=2.0.0
+torchvision>=0.15.0
+
+# API Framework
+fastapi>=0.100.0
+uvicorn[standard]>=0.22.0
+python-multipart>=0.0.6
+
+# Image Processing
+Pillow>=9.5.0
+
+# Tokenization (using only tokenizer, not pretrained model weights)
+transformers>=4.30.0
+
+# Data Processing
+numpy>=1.24.0
+tqdm>=4.65.0
+
+# Configuration and Utilities
+pyyaml>=6.0
+
+# Optional: Visualization and Logging
+matplotlib>=3.7.0
+tensorboard>=2.13.0

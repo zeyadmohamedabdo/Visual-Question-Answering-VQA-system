@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visual Question Answering System - Ask questions about images using AI">
+    <title>VQA - Visual Question Answering</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🔍</span>
+                <h1>VQA System</h1>
+            </div>
+            <p class="tagline">Visual Question Answering powered by Deep Learning</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Left Panel: Image Upload -->
+            <section class="panel upload-panel">
+                <h2 class="panel-title">
+                    <span class="panel-icon">📷</span>
+                    Upload Image
+                </h2>
+                
+                <div class="upload-zone" id="dropZone">
+                    <div class="upload-content">
+                        <div class="upload-icon">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                        </div>
+                        <p class="upload-text">Drag & drop an image here</p>
+                        <p class="upload-subtext">or click to browse</p>
+                        <span class="upload-formats">Supports: JPG, PNG, WebP</span>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                </div>
+
+                <!-- Image Preview -->
+                <div class="preview-container" id="previewContainer" style="display: none;">
+                    <img id="imagePreview" src="" alt="Preview">
+                    <button class="remove-btn" id="removeImage" title="Remove image">×</button>
+                </div>
+            </section>
+
+            <!-- Center Panel: Question Input -->
+            <section class="panel question-panel">
+                <h2 class="panel-title">
+                    <span class="panel-icon">❓</span>
+                    Ask a Question
+                </h2>
+
+                <div class="question-form">
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="questionInput" 
+                            class="question-input"
+                            placeholder="What is in this image?"
+                            maxlength="200"
+                        >
+                        <span class="char-count" id="charCount">0/200</span>
+                    </div>
+
+                    <div class="example-questions">
+                        <p class="examples-label">Try these examples:</p>
+                        <div class="examples-list">
+                            <button class="example-btn" data-question="What color is this?">What color is this?</button>
+                            <button class="example-btn" data-question="How many people are there?">How many people?</button>
+                            <button class="example-btn" data-question="What is the person doing?">What is happening?</button>
+                            <button class="example-btn" data-question="Is this indoors or outdoors?">Indoor or outdoor?</button>
+                        </div>
+                    </div>
+
+                    <button class="submit-btn" id="submitBtn" disabled>
+                        <span class="btn-text">Get Answer</span>
+                        <span class="btn-loader" style="display: none;"></span>
+                    </button>
+                </div>
+
+                <!-- Status Messages -->
+                <div class="status-container" id="statusContainer" style="display: none;">
+                    <div class="status-message" id="statusMessage"></div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Results -->
+            <section class="panel results-panel">
+                <h2 class="panel-title">
+                    <span class="panel-icon">💡</span>
+                    Answer
+                </h2>
+
+                <div class="results-placeholder" id="resultsPlaceholder">
+                    <div class="placeholder-icon">🤔</div>
+                    <p>Upload an image and ask a question to get started</p>
+                </div>
+
+                <div class="results-content" id="resultsContent" style="display: none;">
+                    <!-- Top Answer -->
+                    <div class="top-answer">
+                        <span class="answer-label">Predicted Answer</span>
+                        <div class="answer-text" id="topAnswer"></div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="confidenceFill"></div>
+                        </div>
+                        <span class="confidence-text" id="confidenceText"></span>
+                    </div>
+
+                    <!-- Alternative Answers -->
+                    <div class="alternative-answers">
+                        <span class="alt-label">Other Possible Answers</span>
+                        <ul class="alt-list" id="altAnswersList"></ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Advanced CNN Project - Visual Question Answering System</p>
+            <p class="tech-stack">Built with PyTorch • FastAPI • Custom Transformers</p>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <p>Analyzing image...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
