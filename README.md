@@ -391,4 +391,4 @@ This project is for educational purposes as part of an Advanced CNN course.
 
 ---
 
-*Last updated: December 2024*
+*Last updated: December 2025*
