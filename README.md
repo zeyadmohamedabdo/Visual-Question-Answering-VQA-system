@@ -367,11 +367,11 @@ python training/train.py --no-attention
 
 | Member | Responsibilities |
 |--------|-----------------|
-| **Member 1** | CNN Backbone, SE/Spatial Attention |
-| **Member 2** | Transformer Text Encoder |
-| **Member 3** | Cross-Attention, Fusion Module |
-| **Member 4** | Training Pipeline, Metrics |
-| **Member 5** | API Backend, Frontend GUI |
+| **Zeyad Mohamed** | CNN Backbone, SE/Spatial Attention |
+| **Youssef Mahmoud** | Transformer Text Encoder |
+| **Mariam aboalhasan** | Cross-Attention, Fusion Module |
+| **Mokhtar Mohamed** | Training Pipeline, Metrics |
+| **Youssef Fahmy** | API Backend, Frontend GUI |
 
 ---
 
